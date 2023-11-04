@@ -1,6 +1,6 @@
 .header {
     font-family: MyFont;
-    background-color: #84d140;
+    background-color: transparent;
     margin-top: 10px;
     text-align: center;
     border: 10px solid rgb(255, 255, 255);
@@ -8,6 +8,21 @@
     font-size: 70px;
     color: rgb(255, 255, 255);
 }
+
+body{
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    /* Gradient Animation  */
+    background-image: var(--gradient);
+    background-size: 600%;
+    animation: bg-animation 10s infinite alternate;
+  }
+
+  @keyframes bg-animation {
+    0% {background-position: left;}
+    0% {background-position: right;}
+    100% {background-position: left;}
+  }
 
 /* TABS */
 .t{
@@ -20,6 +35,7 @@
     border-radius: 5px;
     color: black;
     background-color: white;
+   
 }
 
 .tab-content {

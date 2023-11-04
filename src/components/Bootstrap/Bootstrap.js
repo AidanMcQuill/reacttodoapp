@@ -1,11 +1,11 @@
 import React from 'react'
 import './Bootstrap.css'
-import { Container, Row, Tab, Tabs, Nav, Col, Accordion, Head } from 'react-bootstrap'
+import { Container, Row, Tab, Tabs, Nav, Col, Accordion, Head, Alert } from 'react-bootstrap'
 
 export default function Bootstrap() {
     return (
         <section>
-            <div className="bg"></div>
+            <div className='bg'></div>
             {/* Header */}
             <div className='header'>
                 <p>- REACT TO DO APP -</p>
@@ -15,8 +15,14 @@ export default function Bootstrap() {
                 {/* TABS */}
                 <Tabs defaultActiveKey='0' justify variant='pills' className='t' fill>
                     <Tab eventKey='0' title='API'>
-                        {/* API */}
-                        API coming soon!
+                        {/* API ALERTS*/}
+                        <>
+                            {['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'].map((variant) => (
+                                <Alert key={variant} variant={variant}>
+                                    This is a {variant} colored task on my to-do!
+                                </Alert>
+                            ))}
+                        </>
                     </Tab>
                     <Tab eventKey='1' title='How-To'>
                         {/* Accordian */}

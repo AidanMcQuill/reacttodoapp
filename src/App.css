@@ -1,14 +1,34 @@
-.app {
-  max-height: 85vh;
-}
-
-body{
-  background-image: var(--gradient);
+.App {
   background-repeat: no-repeat;
-  
-}
+  min-height: 100vh;
+  /* Gradient Animation  */
+  background-image: var(--gradient);
+  background-size: 600%;
+  animation: bg-animation 10s infinite alternate;
+  }
+
+  @keyframes bg-animation {
+    0% {background-position: left;}
+    0% {background-position: right;}
+    100% {background-position: left;}
+  }
 
 .container{
   height:100vh;
   overflow: hidden;
+}
+
+.navClass {
+  background-color: transparent;
+  font-family: MyFont;
+  font-variant: small-caps;
+  text-decoration: underline 2px #efacdd;
+  border-radius: 1px;
+  font-size: 50px;
+  
+}
+
+.nav-link {
+  color: #efacdd;
+  padding: 5px;
 }
