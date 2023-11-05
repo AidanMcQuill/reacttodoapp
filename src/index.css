@@ -17,12 +17,12 @@ code {
 :root {
     --gradient: linear-gradient(
       45deg,
-      #efacdd,
-      #959038,
-      #80be1a,
+      #075a9e,
       #51aa90,
-      #4b756a,
-      #2b896a
+      #075a9e,
+      #51aa90,
+      #075a9e,
+      #51aa90
     );
 }
 

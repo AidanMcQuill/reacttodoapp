@@ -1,17 +1,50 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import { Container } from 'react-bootstrap'
+import axios from 'axios'
+import SingleCategory from './SingleCategory';
 
 export default function Categories() {
+    //LOGIC
+    //hook to store categories
+    const [categories, setCategories] = useState([]);
+
+    const getCategories = () => {
+        axios.get('https://localhost:7254/api/Categories').then(response => {
+            console.log(response)
+            setCategories(response.data)
+        })
+    }
+    
+    //use effect to get categories
+    useEffect(() => {
+        getCategories()
+    }, []);
+
+
+    //UI
   return (
-    <div className='container'>
-        <h1>Categories</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt exercitationem quas dolorum totam maxime consequuntur optio sapiente dignissimos dicta quo atque delectus illum, beatae nostrum sit dolores praesentium earum eum.
-        Doloribus fuga porro, distinctio laudantium ea similique molestias minus aspernatur architecto iure optio repellendus quod esse at, nesciunt quam tenetur, quis aliquid sed eaque tempora incidunt in veniam non. Sint.
-        Quam recusandae minima culpa modi error accusantium atque repellendus. Nam accusamus unde est maxime, nobis, veniam vero sequi natus totam neque blanditiis repellendus libero tempore ratione aliquam obcaecati? Ipsam, itaque!
-        Maxime soluta cum a. Est consectetur enim fugit esse soluta facilis eos animi assumenda labore distinctio, quos cupiditate dolorem itaque, non tempore necessitatibus, ratione voluptatem cum sed harum repellendus! Quo.
-        Odio dolore et eum nulla nihil odit aperiam ducimus inventore ut fugit quis iure architecto placeat sint, mollitia repellendus, aut fugiat ipsam magni, enim nostrum. Blanditiis earum eum amet autem.
-        Maiores explicabo illum praesentium nulla, accusantium ad labore ipsa consectetur illo quam ducimus dolorem ipsam velit repellendus corporis nobis pariatur voluptatibus distinctio odio obcaecati provident. Quis dignissimos doloribus aperiam sit!
-        Blanditiis quis perspiciatis alias sapiente excepturi natus neque quod sint porro itaque, beatae, explicabo enim reiciendis mollitia nisi repellendus et ex voluptatibus vel aspernatur, libero sunt? Ut, eaque! Consequuntur, quam.
-        Dolore est officia velit ipsam quis expedita, molestias maxime provident nostrum obcaecati? Possimus eligendi amet corrupti, delectus adipisci at, expedita cumque ex eum rem beatae! Corporis ullam consequatur voluptatibus vel.</p>
-    </div>
+    <section className="categories">
+    <article className="bg-info p-5">
+        <h1 className='text-center'>
+            Categories Dashboard
+        </h1>
+    </article>
+    <Container className="p-2">
+        <table className="table bg-info my-3">
+            <thead className="table-secondary text-uppercase">
+                <tr> {/*Table Row*/}
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {/* READ UI */}
+                {categories.map(c => 
+                    <SingleCategory key={c.categoryId} category = {c}/>
+                )}
+            </tbody>
+        </table>
+    </Container>
+</section>
   )
 }
