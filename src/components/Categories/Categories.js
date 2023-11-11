@@ -2,11 +2,19 @@ import React, {useEffect, useState} from 'react'
 import { Container } from 'react-bootstrap'
 import axios from 'axios'
 import SingleCategory from './SingleCategory';
+import {useAuth} from '../../contexts/AuthContext'
+import CatCreate from './CatCreate';
 
 export default function Categories() {
     //LOGIC
     //hook to store categories
     const [categories, setCategories] = useState([]);
+
+    const { currentUser } = useAuth()
+
+     //This react hook will track the state of the whether the create form is showing or hidden
+    // we intially display false because we wanna make sure the user is logged in first. 
+    const [showCreate, setShowCreate] = useState(false);
 
     const getCategories = () => {
         axios.get('https://localhost:7254/api/Categories').then(response => {
@@ -29,6 +37,27 @@ export default function Categories() {
             Categories Dashboard
         </h1>
     </article>
+
+    {/* Admin CRUD functions, add check for admin */}
+    {currentUser.email === process.env.REACT_APP_ADMIN_EMAIL &&
+        <div className='bg-dark p-2 mb-3 text-center'>
+            {showCreate ?
+                <>
+                {/* Set the usestate to false to disable the display */}
+                <button onClick={() => setShowCreate(false)} className="btn btn-warning">   
+                    Cancel
+                </button>
+                {/* we call the function props so they can be called in the external component */}
+                <CatCreate getCategories={getCategories} setShowCreate = {setShowCreate} />
+                </> :
+                // set show state as true by triggering
+                <button onClick={() => setShowCreate(true)} className='btn btn-info'>
+                    Create Category
+                </button>
+            }    
+        </div>
+    }
+
     <Container className="p-2">
         <table className="table bg-info my-3">
             <thead className="table-secondary text-uppercase">
@@ -40,7 +69,7 @@ export default function Categories() {
             <tbody>
                 {/* READ UI */}
                 {categories.map(c => 
-                    <SingleCategory key={c.categoryId} category = {c}/>
+                    <SingleCategory key={c.categoryId} category = {c} getCategories={getCategories}/>
                 )}
             </tbody>
         </table>
