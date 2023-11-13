@@ -21,8 +21,8 @@ export default function Login() {
     //UI
   return (
      <div className='login'>
-        <article className="bg-info mb-5 p-5 text-dark">
-            <h1 className='text-center'>Welcome to ResourePlus!</h1>
+        <article className="header mb-5 p-5 text-dark hText">
+            <h1 className='header text-center'>Login</h1>
         </article>
         <Container>
             <Card className="m-2 border-dark text-center">
@@ -31,7 +31,7 @@ export default function Login() {
                 </Card.Header>
                 <Card.Body>
                     {/* When the user clicks our button we want the user to fire off the handleAuth and trigger the callback */}
-                    <button className="btn btn-success" onClick={() => handleAuth()}>
+                    <button className="btn createBtn bg-dark" onClick={() => handleAuth()}>
                         Login w/ Github
                     </button>
                 </Card.Body>

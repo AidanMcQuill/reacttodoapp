@@ -58,7 +58,7 @@ export default function Categories() {
             )}
 
             <Container className='p-2'>
-                <table className='table catTable my-3'>
+                <table className='table my-3'>
                     <thead className='table-secondary text-uppercase'>
                         <tr>
                             {' '}
@@ -68,7 +68,7 @@ export default function Categories() {
                             {currentUser.email === process.env.REACT_APP_ADMIN_EMAIL && <th>Actions</th>}
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='catBody'>
                         {/* READ UI */}
                         {categories.map((c) => (
                             <SingleCategory key={c.categoryId} category={c} getCategories={getCategories} />

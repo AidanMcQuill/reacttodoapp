@@ -30,11 +30,11 @@ export default function SingleCategory(props) {
       {currentUser.email === process.env.REACT_APP_ADMIN_EMAIL &&
         <td>
           <button onClick={() => setShowEdit(true)} className="m-1 rounded">
-             <FaEdit/>
+             <FaEdit/> Edit
           </button>
 
-          <button onClick={() => deleteCat(categoryId)}>
-             <FaTrashAlt/>
+          <button onClick={() => deleteCat(categoryId)} className="m-1 rounded">
+             <FaTrashAlt/> Delete
           </button>
           {/* We render the Edit depending on conditon */}
           {showEdit &&

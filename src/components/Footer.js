@@ -10,8 +10,7 @@ export default function Footer() {
     return (
         <>
         <div className='footBar'>
-
-            {currentUser && <Logout />}
+            {currentUser && <Logout />} 
             {/* ^ If the user is logged in offer the logout */}
 
             <footer className='text-center text-white p-4'>

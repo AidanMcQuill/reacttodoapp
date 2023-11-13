@@ -87,14 +87,14 @@
   max-height: 50vh;
   max-width: 50vh;
   border-radius: 5%;
-  outline:auto;
-  outline-width: 5px;
-  outline-color: #075a9e;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .welcomeText{
   background-color: #075a9e;
   border-radius: 5%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  outline-width: 5px;
 }
 
 .HeaderText{

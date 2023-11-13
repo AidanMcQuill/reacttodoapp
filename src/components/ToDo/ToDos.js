@@ -18,6 +18,8 @@ export default function ToDos() {
     //filter hook 
     const [filter, setFilter] = useState(0);
 
+    const [showDone, setShowDone] = useState(false);
+
     //Set Hook for create UI 
     const [showCreate, setShowCreate] = useState(false);
     //0 is not listed within the index of todo's. so this will "show all"
@@ -56,15 +58,28 @@ export default function ToDos() {
         </div>
     }
 
-    <FilterCat setFilter={setFilter}/>
+    <FilterCat setFilter={setFilter} showDone={showDone} setShowDone={setShowDone} />
     <Container className='mt-3'>
+        
         <article className=" row justify-content-center">
-            {filter === 0 ? toDos.map(t => 
-                <SingleToDo key={t.toDoId} todo={t} getToDos={getToDos}/>
-            ) :
-            toDos.filter(t => t.categoryId === filter).map(
-                t => <SingleToDo key={t.toDoId} todo={t} getToDos={getToDos}/> 
-            )}
+        {!showDone ?
+              <>
+               {filter === 0 ? toDos.filter(x => x.done === false).map(x =>
+                <SingleToDo key={x.toDoId} todo={x} getToDos={getToDos}/>
+                ) :
+                toDos.filter(x => x.done === false && x.categoryId === filter).map(x =>
+                  <SingleToDo key={x.toDoId} todo={x} getToDos={getToDos} />
+              )}
+            </> :
+            <>
+              {filter === 0 ? toDos.map(x =>
+                  <SingleToDo key={x.toDoId} todo={x} getToDos={getToDos}/>
+                ) :
+                toDos.filter(x => x.categoryId === filter).map(x =>
+                  <SingleToDo key={x.toDoId} todo={x} getToDos={getToDos} />
+              )}
+            </>
+            }
             {/* If there are no results within the filtered tag */}
             {filter !== 0 &&  toDos.filter(t => t.categoryId === filter).length === 0 &&
                 <h2 className='alert alert-warning text-dark'>

@@ -35,7 +35,7 @@ export default function SingleToDo(props) {
     }
 
     return (
-        <Card style={{ width: '24rem' }} className='todoCard sketchy'>
+        <Card style={{ width: '24rem' }} className='todoCard'>
             <Card.Body>
                 <Card.Title>
                     <h3>
