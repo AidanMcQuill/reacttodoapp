@@ -14,7 +14,7 @@ export default function SingleToDo(props) {
     const { currentUser } = useAuth()
 
     const deleteToDo = (id) => {
-        if (window.confirm(`Are you sure? You're about to delete ${name}`)) {
+        if (window.confirm(`Are you sure? You're about to delete: ${name}`)) {
             axios.delete(`https://localhost:7254/api/ToDoes/${id}`).then(() => {
                 props.getToDos()
             })
@@ -40,7 +40,7 @@ export default function SingleToDo(props) {
                 <Card.Title>
                     <h3>
                         {name} :{done === true && <h3 className='text-success'>Completed!</h3>}
-                        {done !== true && <h3 className='text-danger'>not-completed</h3>}
+                        {done !== true && <h3 className='text-danger'>Not-Completed</h3>}
                     </h3>
                 </Card.Title>
                 <Card.Text>
@@ -60,7 +60,7 @@ export default function SingleToDo(props) {
                         </div>
                     )}
                 </Card.Text>
-                <input className='checkbox' type='checkbox' checked={props.todo.done} onChange={() => flipDone()} />
+                <input className='checkbox' type='checkbox' checked={props.todo.done} onChange={() => flipDone()}/>
             </Card.Body>
         </Card>
     )

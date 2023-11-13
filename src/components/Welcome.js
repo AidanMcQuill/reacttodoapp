@@ -10,7 +10,7 @@ export default function Welcome() {
             <h1 className='justify-content-center mt-3 mb-3'>Welcome To My To-Do app</h1>
             <div className='row'>
                 <div className='welcomeText col-md-7'>
-                    <h3 className='text-center mt-1 HeaderText'>Welcome to my To-Do app</h3>
+                    <h3 className='text-center mt-1 HeaderText'>Meet The Developer</h3>
                     <p className='pText'>
                         Greetings! I'm Aidan McQuillan, delighted to have you explore my creation, the React To-Do app! Crafted using
                         <a href='https://reactjs.org/' target='_blank' rel='noreferrer' class='p-link'>
@@ -39,7 +39,7 @@ export default function Welcome() {
                         </a>
                         . Infused with HTML finesse and React Bootstrap artistry, it reflects my fusion of coding expertise. The full
                         masterpiece, adorned with HTML and React Bootstrap finesse, is&nbsp;
-                        <a href='https://github.com/AidanMcQuillan/your-react-todo-app' target='_blank' rel='noreferrer' class='p-link'>
+                        <a href='https://github.com/AidanMcQuill/reacttodoapp' target='_blank' rel='noreferrer' class='p-link'>
                             available on GitHub
                         </a>
                         .
