@@ -12,7 +12,7 @@ const catSchema = Yup.object().shape({
 //schema for to-dos
 const toDoSchema = Yup.object().shape({
         //we don't add ToDo ID as that is predetermined
-        name : Yup.string().max(100, 'over 100 is way too much!').required('we need a name!'),
+        name : Yup.string().max(20, 'Too many characters!').required('we need a name!'),
         done : Yup.bool().required(),
         categoryId : Yup.number()
 })

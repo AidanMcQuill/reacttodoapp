@@ -1,0 +1,55 @@
+.header{
+    background-color: #51aa90;
+}
+
+.createBtn {
+    color: #51aa90;
+    border-color: #51aa90;
+}
+
+.createBtn:hover{
+    color: #075a9e;
+    border-color: #075a9e;
+}
+
+.filter-btn{
+    color: #51aa90;
+    border-color: #51aa90;
+}
+
+.todoBox{
+    background-color: #075a9e;
+    border-radius: 5%;
+}
+
+.todoCard{
+    padding: 8px;
+    margin: 8px;
+    color: #075a9e;
+    background-color: #51aa90;
+    border-radius: 5%
+}
+
+input.checkbox{
+    accent-color: #075a9e;
+    height: 2em;
+    width: 2em;
+}
+
+.admin-btn{
+    position: absolute;
+    top: 5em;
+    font-size: 1.2em;
+    background: none;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: .25s;
+}
+
+.admin-btn#editLink{
+    left: 1em;
+}
+.admin-btn#deleteLink{
+    left: 5.3em;
+}

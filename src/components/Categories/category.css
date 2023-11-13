@@ -1,0 +1,16 @@
+.table-secondary th{
+    background-color: #51aa90;
+}
+
+.catTable tbody{
+    background-color: #51aa90;
+}
+
+.header{
+    background-color: #51aa90;
+}
+
+.createBtn {
+    color: #51aa90;
+    border-color: #51aa90;
+}

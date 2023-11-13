@@ -9,13 +9,16 @@ export default function Footer() {
     //UI
     return (
         <>
+        <div className='footBar'>
+
             {currentUser && <Logout />}
             {/* ^ If the user is logged in offer the logout */}
 
-            <footer className='text-center text-white bg-info p-4'>
+            <footer className='text-center text-white p-4'>
                 {/* Charcter Entity Refrences: &copy; */}
-                <strong>&copy; {new Date().getFullYear()} Centriq Training, All Rights Reserved</strong>
+                <strong>&copy; {new Date().getFullYear()} Aidan McQuillan</strong>
             </footer>
+        </div>
         </>
     )
 }

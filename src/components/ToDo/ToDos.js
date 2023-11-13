@@ -1,21 +1,30 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import { Container } from 'react-bootstrap';
-import ToDo from '../ToDos/ToDo';
 import SingleToDo from './SingleToDo';
 import FilterCat from './FilterCat';
+import {useAuth} from '../../contexts/AuthContext'
+import ToDoCreate from './ToDoCreate';
+import './todo.css'
+
 
 export default function ToDos() {
     //LOGIC
+    const {currentUser} = useAuth()
+    
     //Hook to store our todo data
     const [toDos, setToDos] = useState([]);
     
     //filter hook 
     const [filter, setFilter] = useState(0);
+
+    //Set Hook for create UI 
+    const [showCreate, setShowCreate] = useState(false);
     //0 is not listed within the index of todo's. so this will "show all"
 
+    //Get 
     const getToDos = () => {
-        axios.get('https://localhost:7254/api/ToDoes').then(response => {
+        axios.get(`https://localhost:7254/api/ToDoes`).then(response => {
             console.log(response)
             setToDos(response.data)
         })
@@ -28,19 +37,33 @@ export default function ToDos() {
     
     //UI
   return (
-    <section className="resources">
-    <article className="bg-info p-5">
-        <h1 className="text-center">Resources Dashboard</h1>
+    <section className="todo">
+    <article className="header p-5">
+        <h1 className="text-center">To-Do List</h1>
     </article>
+
+    {/* admin only CREATE view */}
+    {currentUser.email === process.env.REACT_APP_ADMIN_EMAIL &&
+        <div className='bg-dark p-2 mb-3 text-center'>
+            <button className='btn createBtn'onClick={() => setShowCreate(!showCreate)}>
+                {!showCreate ? 'Add a new task' : 'cancel'}
+            </button>
+            <div className='createContainer'>
+                {showCreate &&
+                    <ToDoCreate getToDos = {getToDos} setShowCreate = {setShowCreate}/>
+                }
+            </div>
+        </div>
+    }
+
     <FilterCat setFilter={setFilter}/>
-    <Container>
-        <article className="resourceGallery row justify-content-center">
-            {/* Below we write conditional rendering to see if the user is trying to filter results or not, and display the right resources according to what they want. */}
+    <Container className='mt-3'>
+        <article className=" row justify-content-center">
             {filter === 0 ? toDos.map(t => 
-                <SingleToDo key={t.resourceId} todo={t}/>
+                <SingleToDo key={t.toDoId} todo={t} getToDos={getToDos}/>
             ) :
             toDos.filter(t => t.categoryId === filter).map(
-                t => <SingleToDo key={t.resourceId} todo={t} /> 
+                t => <SingleToDo key={t.toDoId} todo={t} getToDos={getToDos}/> 
             )}
             {/* If there are no results within the filtered tag */}
             {filter !== 0 &&  toDos.filter(t => t.categoryId === filter).length === 0 &&

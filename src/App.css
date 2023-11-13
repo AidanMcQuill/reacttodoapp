@@ -22,13 +22,69 @@
   background-color: transparent;
   font-family: MyFont;
   font-variant: small-caps;
-  text-decoration: underline 2px #efacdd;
+  text-decoration: underline 2px #51aa90;
   border-radius: 1px;
   font-size: 50px;
   
 }
 
+.navLink{
+  color: black;
+  text-decoration: underline 2px black;
+}
+
+.navLink:hover{
+  color: #51aa90;
+}
+
+ .homeBTN {
+  margin-right: 9px;
+  border-radius: 45%;
+  margin-left: 5px;
+  color: #51aa90;
+  border-color: #51aa90;
+  background: none;
+  background-color: transparent;
+  outline: none;
+ }
+
 .nav-link {
   color: #efacdd;
   padding: 5px;
 }
+
+.navClass {
+  background-color:#075a9e;
+}
+
+ 
+
+.footBar {
+  background-color:#075a9e;
+}
+
+.welcomeCon {
+  max-height: 75vh;
+  display:flexbox;
+  
+}
+
+.welcomeCon h1 {
+  display: flex;
+}
+
+.WelcomeImg img {
+  object-fit: fill;
+  max-height: 50vh;
+  max-width: 50vh;
+  border-radius: 5%;
+  outline:auto;
+  outline-width: 5px;
+  outline-color: #075a9e;
+}
+
+.welcomeText{
+  background-color: #075a9e;
+  border-radius: 5%;
+}
+ 

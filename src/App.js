@@ -1,7 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from './components/Auth/Login'
-import ToDo from './components/ToDos/ToDo'
 import Navigation from './components/Navigation'
 import AuthProvider from './contexts/AuthContext'
 import Footer from './components/Footer'
