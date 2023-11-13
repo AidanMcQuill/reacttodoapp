@@ -39,13 +39,13 @@ export default function ToDos() {
   return (
     <section className="todo">
     <article className="header p-5">
-        <h1 className="text-center">To-Do List</h1>
+        <h1 className="text-center hText">To-Do List</h1>
     </article>
 
     {/* admin only CREATE view */}
     {currentUser.email === process.env.REACT_APP_ADMIN_EMAIL &&
         <div className='bg-dark p-2 mb-3 text-center'>
-            <button className='btn createBtn'onClick={() => setShowCreate(!showCreate)}>
+            <button className=' btn'onClick={() => setShowCreate(!showCreate)}>
                 {!showCreate ? 'Add a new task' : 'cancel'}
             </button>
             <div className='createContainer'>

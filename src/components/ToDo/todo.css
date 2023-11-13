@@ -2,6 +2,10 @@
     background-color: #51aa90;
 }
 
+.btn{
+    color: #51aa90;
+    border-color: #51aa90;
+}
 .createBtn {
     color: #51aa90;
     border-color: #51aa90;
@@ -27,7 +31,7 @@
     margin: 8px;
     color: #075a9e;
     background-color: #51aa90;
-    border-radius: 5%
+    border-radius: 5%;
 }
 
 input.checkbox{
@@ -48,8 +52,14 @@ input.checkbox{
 }
 
 .admin-btn#editLink{
-    left: 1em;
+    left: 1.5em;
 }
 .admin-btn#deleteLink{
-    left: 5.3em;
+    left: 5.75em;
+}
+
+.hText{
+    font-family: MyFont;
+    font-variant: small-caps;
+
 }

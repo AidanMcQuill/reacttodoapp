@@ -18,6 +18,11 @@
   overflow: hidden;
 }
 
+.pText{
+  font-size: x-large;
+  color: #51aa90;
+}
+
 .navClass {
   background-color: transparent;
   font-family: MyFont;
@@ -31,6 +36,7 @@
 .navLink{
   color: black;
   text-decoration: underline 2px black;
+  margin-left: 15px;
 }
 
 .navLink:hover{
@@ -51,6 +57,7 @@
 .nav-link {
   color: #efacdd;
   padding: 5px;
+  margin-right: 5px;
 }
 
 .navClass {
@@ -71,6 +78,8 @@
 
 .welcomeCon h1 {
   display: flex;
+  font-family: MyFont;
+  font-variant: small-caps;
 }
 
 .WelcomeImg img {
@@ -86,5 +95,10 @@
 .welcomeText{
   background-color: #075a9e;
   border-radius: 5%;
+}
+
+.HeaderText{
+  color: #51aa90;
+  text-decoration: underline;
 }
  

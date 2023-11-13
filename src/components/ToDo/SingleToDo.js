@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { FaEdit, FaTrashAlt } from 'react-icons/fa'
-import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import axios from 'axios'
 import ToDoEdit from './ToDoEdit'
@@ -9,7 +8,7 @@ import './todo.css'
 
 export default function SingleToDo(props) {
     //deconstruct
-    const { name, done, categoryId, toDoId } = props.todo
+    const { name, done, toDoId } = props.todo
 
     const [showEdit, setShowEdit] = useState(false)
     const { currentUser } = useAuth()
@@ -36,11 +35,11 @@ export default function SingleToDo(props) {
     }
 
     return (
-        <Card style={{ width: '24rem' }} className='todoCard'>
+        <Card style={{ width: '24rem' }} className='todoCard sketchy'>
             <Card.Body>
                 <Card.Title>
                     <h3>
-                        {name} :{done == true && <h3 className='text-success'>Completed!</h3>}
+                        {name} :{done === true && <h3 className='text-success'>Completed!</h3>}
                         {done !== true && <h3 className='text-danger'>not-completed</h3>}
                     </h3>
                 </Card.Title>

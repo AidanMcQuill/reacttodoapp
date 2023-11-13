@@ -7,14 +7,45 @@ export default function Welcome() {
     const { currentUser } = useAuth()
     return (
         <Container className='welcomeCon'>
-            <h1 className='justify-content-center'>Welcome To My TO-DO app</h1>
+            <h1 className='justify-content-center mt-3 mb-3'>Welcome To My To-Do app</h1>
             <div className='row'>
-                <div className='welcomeText col-md-5'>
-                    <p>
-                     Welcome to my ToDo app! My name is Aidan McQuillan. This app is written in ReactJS and communicates with a database through SQL using an API. Several npm packages were implemented in this app for advanced functionality, including routing via React Router Dom, API request handling through Axios, authorization via Google Firebase, and form handling and schema validation using a combination of Formik and Yup. The full source code is available on GitHub.
+                <div className='welcomeText col-md-7'>
+                    <h3 className='text-center mt-1 HeaderText'>Welcome to my To-Do app</h3>
+                    <p className='pText'>
+                        Greetings! I'm Aidan McQuillan, delighted to have you explore my creation, the React To-Do app! Crafted using
+                        <a href='https://reactjs.org/' target='_blank' rel='noreferrer' class='p-link'>
+                            ReactJS 
+                        </a>
+                        , this app seamlessly connects to a well-organized database through an efficient backend built on
+                        <a
+                            href='https://learn.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-6.0'
+                            target='_blank'
+                            rel='noreferrer'
+                            class='p-link'
+                        >
+                            ASP.NET API
+                        </a>
+                        . To elevate its capabilities, it leverages a trove of npm packages: routing magic by&nbsp;
+                        <a href='https://reactrouter.com/en/main' target='_blank' rel='noreferrer' class='p-link'>
+                            React Router Dom
+                        </a>
+                        , smooth API interactions managed with&nbsp;
+                        <a href='https://axios-http.com/' target='_blank' rel='noreferrer' class='p-link'>
+                            Axios
+                        </a>
+                        , fortified by the security prowess of&nbsp;
+                        <a href='https://firebase.google.com/products/auth' target='_blank' rel='noreferrer' class='p-link'>
+                            Google Firebase
+                        </a>
+                        . Infused with HTML finesse and React Bootstrap artistry, it reflects my fusion of coding expertise. The full
+                        masterpiece, adorned with HTML and React Bootstrap finesse, is&nbsp;
+                        <a href='https://github.com/AidanMcQuillan/your-react-todo-app' target='_blank' rel='noreferrer' class='p-link'>
+                            available on GitHub
+                        </a>
+                        .
                     </p>
                 </div>
-                <div className='WelcomeImg col-md-5'>
+                <div className='WelcomeImg col-md-3'>
                     <img src={HeroShot} alt='Developer Portrait' photo />
                 </div>
             </div>

@@ -14,7 +14,7 @@ export default function Navigation() {
      
      {/* <button className='homeBTN' onClick={<Welcome/>}> <HiHome/> </button> */}
      <a href='/' className='navLink'>
-        <span class="brand-text"> React To Do App</span>
+        <span class="brand-text">TO-DO APP</span>
      </a>
         {/* Hamburger */}
         <Navbar.Toggle/>

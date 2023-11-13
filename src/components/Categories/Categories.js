@@ -33,7 +33,7 @@ export default function Categories() {
     return (
         <section className='categories'>
             <article className='header p-5'>
-                <h1 className='text-center'>Categories Dashboard</h1>
+                <h1 className='text-center hText'>Categories</h1>
             </article>
 
             {/* Admin CRUD functions, add check for admin */}
